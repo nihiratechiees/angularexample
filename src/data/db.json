@@ -1,0 +1,13 @@
+{
+  "users": [
+    {
+      "id": "df46",
+      "username": "testuser",
+      "password": "testuser",
+      "fullname": "Test",
+      "email": "test@in.com",
+      "address": "new street\nKN Nager",
+      "isagree": true
+    }
+  ]
+}

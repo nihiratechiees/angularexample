@@ -1,0 +1,51 @@
+<form #registerForm="ngForm" (ngSubmit)="Proceedregister(registerForm)">
+    <mat-card>
+        <mat-card-header>
+            <h1>User Registration Form</h1>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-form-field>
+                <mat-label>Username</mat-label>
+                <input #username="ngModel" matInput type="text" name="username" [(ngModel)]="userobj.username" required
+                    minlength="5">
+                @if(username.invalid && username.touched){
+                <mat-error>Username is required and must be at least 5 characters long.</mat-error>
+                }
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input #password="ngModel" matInput type="password" name="password" [(ngModel)]="userobj.password"
+                    required minlength="8">
+                @if(password.invalid && password.touched){
+                <mat-error>Password is required and must be at least 8 characters long.</mat-error>
+                }
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Full Name</mat-label>
+                <input #fullname="ngModel" matInput type="text" name="fullname" [(ngModel)]="userobj.fullname" required>
+                @if(fullname.invalid && fullname.touched){
+                <mat-error>Full Name is required.</mat-error>
+                }
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input #email="ngModel" matInput type="text" name="email" [(ngModel)]="userobj.email" required email>
+                @if(email.invalid && email.touched){
+                <mat-error>Email is required and must be a valid email address.</mat-error>
+                }
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Address</mat-label>
+                <textarea matInput type="text" name="address" [(ngModel)]="userobj.address"></textarea>
+            </mat-form-field>
+            <div>
+                <mat-checkbox name="isagree" [(ngModel)]="userobj.isagree" required>I agree to the terms and
+                    conditions</mat-checkbox>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button type="submit" [disabled]="registerForm.invalid" matButton="filled">Register</button>
+            <a type="button" (click)="redirectToLogin()" matButton>Already Registered?</a>
+        </mat-card-actions>
+    </mat-card>
+</form>

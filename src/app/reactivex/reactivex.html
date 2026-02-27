@@ -1,0 +1,50 @@
+<form [formGroup]="customerform" (ngSubmit)="Save()">
+
+    <mat-card>
+        <mat-card-header>
+            <h1>Reactive Form Example</h1>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-form-field>
+                <mat-label>Id</mat-label>
+                <input matInput formControlName="id" type="text">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Full Name</mat-label>
+                <input matInput formControlName="fullname" type="text">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" type="email">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Phone</mat-label>
+                <input matInput formControlName="phone" type="text">
+            </mat-form-field>
+            <div formArrayName="address">
+                <h3>Addresses</h3>
+                <button matButton="outlined" (click)="addAddress()">Add Address</button>
+                @for(item of addresslist.controls;track $index; let i=$index){
+                <div style="border: 1px solid #ccc;margin: 2%;">
+                    <mat-form-field>
+                        <mat-label>Address {{i+1}}</mat-label>
+                        <textarea matInput [formControlName]="i"></textarea>
+                    </mat-form-field>
+                    <button matButton (click)="removeaddress(i)"><mat-icon>delete</mat-icon></button>
+                </div>
+
+
+                }
+            </div>
+
+        </mat-card-content>
+        <mat-card-actions>
+            <button type="submit" matButton="filled">Submit</button>
+        </mat-card-actions>
+    </mat-card>
+</form>
+<!-- 
+<button (click)="assigndata()">Assign data</button>
+<button (click)="patchdata()">Assign patch data</button>
+<button (click)="resetdata()">Reset data</button>
+<button (click)="setfullname()">Set Full Name</button> -->

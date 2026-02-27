@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './Guard/auth-guard';
+import { Reactivex } from './reactivex/reactivex';
 
 export const routes: Routes = [
    
@@ -12,6 +13,9 @@ export const routes: Routes = [
     },
     {
         path: 'login', loadComponent: () => import('./TDF/login/login').then(m => m.Login)
+    },
+    {
+          path: 'reactive',component:Reactivex
     },
      {
         path: '**', loadComponent: () => import('./home/home').then(m => m.Home)

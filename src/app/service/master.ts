@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, signal } from '@angular/core';
 import { UserModel } from '../Model/Usermodel';
 import { LoginModel } from '../Model/LoginModel';
+import { CompanyModel } from '../Model/Companymode';
 
 @Injectable({
   providedIn: 'root',
@@ -22,6 +23,10 @@ export class Master {
   }
   Isloggedin() {
     return this._isloggedin();
+  }
+
+  GetCompanies() {
+    return this.http.get<CompanyModel[]>(this.baseurl + "/companies");
   }
 
 }

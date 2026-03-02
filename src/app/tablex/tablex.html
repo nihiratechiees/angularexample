@@ -1,1 +1,47 @@
-<p>tablex works!</p>
+<mat-card>
+    <mat-form-field>
+        <mat-label>Search</mat-label>
+        <input matInput (input)="searchText.set($any($event.target).value)" placeholder="Search companies">
+    </mat-form-field>
+    <mat-card-header>
+        <mat-card-title>Company List</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <table mat-table [dataSource]="datasource" matSort>
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Company Id</th>
+                <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+            </ng-container>
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Company Name</th>
+                <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+            </ng-container>
+            <ng-container matColumnDef="address">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Address</th>
+                <td mat-cell *matCellDef="let element">{{ element.address }}</td>
+            </ng-container>
+            <ng-container matColumnDef="country">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Country</th>
+                <td mat-cell *matCellDef="let element">{{ element.country }}</td>
+            </ng-container>
+            <ng-container matColumnDef="empcount">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Employee Count</th>
+                <td mat-cell *matCellDef="let element">{{ element.empcount }}</td>
+            </ng-container>
+            <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+                <td mat-cell *matCellDef="let element">{{ element.isactive ? 'Active' : 'Inactive' }}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedcolumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedcolumns;"></tr>
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="6">No data matching the filter "{{ searchText() }}"</td>
+            </tr>
+
+        </table>
+        <mat-paginator [pageSizeOptions]="[3, 5, 10, 20]" showFirstLastButtons="true"></mat-paginator>
+
+    </mat-card-content>
+
+</mat-card>

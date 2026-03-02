@@ -9,5 +9,87 @@
       "address": "new street\nKN Nager",
       "isagree": true
     }
+  ],
+  "companies": [
+    {
+      "id": 1,
+      "name": "Company A",
+      "address": "123 Main St",
+      "country": "USA",
+      "empcount": 100,
+      "isactive": true
+    },
+    {
+      "id": 2,
+      "name": "Company B",
+      "address": "456 Elm St",
+      "country": "UK",
+      "empcount": 50,
+      "isactive": false
+    },
+    {
+      "id": 3,
+      "name": "Company C",
+      "address": "789 Oak St",
+      "country": "Canada",
+      "empcount": 200,
+      "isactive": true
+    },
+    {
+      "id": 4,
+      "name": "Company D",
+      "address": "321 Pine St",
+      "country": "Australia",
+      "empcount": 150,
+      "isactive": false
+    },
+    {
+      "id": 5,
+      "name": "Company E",
+      "address": "654 Cedar St",
+      "country": "Germany",
+      "empcount": 75,
+      "isactive": true
+    },
+    {
+      "id": 6,
+      "name": "Company F",
+      "address": "987 Birch St",
+      "country": "France",
+      "empcount": 120,
+      "isactive": false
+    },
+    {
+      "id": 7,
+      "name": "Company G",
+      "address": "246 Maple St",
+      "country": "Japan",
+      "empcount": 80,
+      "isactive": true
+    },
+    {
+      "id": 8,
+      "name": "Company H",
+      "address": "135 Spruce St",
+      "country": "India",
+      "empcount": 300,
+      "isactive": false
+    },
+    {
+      "id": 9,
+      "name": "Company I",
+      "address": "864 Willow St",
+      "country": "Brazil",
+      "empcount": 60,
+      "isactive": true
+    },
+    {
+      "id": 10,
+      "name": "Company J",
+      "address": "753 Aspen St",
+      "country": "South Africa",
+      "empcount": 90,
+      "isactive": false
+    }
   ]
 }

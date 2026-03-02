@@ -13,7 +13,7 @@ import { ɵEmptyOutletComponent } from "@angular/router";
 @Component({
   selector: 'app-tablex',
   imports: [MatTableModule, MatPaginatorModule, MatSortModule,
-    MatFormFieldModule, MatInputModule, MatCardModule, ɵEmptyOutletComponent],
+    MatFormFieldModule, MatInputModule, MatCardModule],
   templateUrl: './tablex.html',
   styleUrl: './tablex.css',
 })

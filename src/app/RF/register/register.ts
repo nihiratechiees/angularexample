@@ -12,13 +12,12 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   imports: [ReactiveFormsModule, MatCardModule, MatFormFieldModule, MatInputModule, MatCheckboxModule,
-    MatButtonModule
-  ],
+    MatButtonModule],
   templateUrl: './register.html',
   styleUrl: './register.css',
 })
 export class Register {
-
+  
   constructor(private service: Master, private router: Router) { }
 
   regiterform=new FormGroup({
@@ -54,5 +53,6 @@ export class Register {
   redirectToLogin() {
     this.router.navigate(['/login']);
   }
+
 
 }

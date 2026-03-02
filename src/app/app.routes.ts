@@ -16,6 +16,12 @@ export const routes: Routes = [
         path: 'login', loadComponent: () => import('./TDF/login/login').then(m => m.Login)
     },
     {
+        path: 'registerrf', loadComponent: () => import('./RF/register/register').then(m => m.Register)
+    },
+    {
+        path: 'loginrf', loadComponent: () => import('./RF/login/login').then(m => m.Login)
+    },
+    {
         path: 'reactive', component: Reactivex
     },
     {

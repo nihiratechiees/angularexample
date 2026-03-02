@@ -18,7 +18,7 @@ import { UserModel } from '../../Model/Usermodel';
   styleUrl: './login.css',
 })
 export class Login {
-  constructor(private service: Master, private router: Router) { }
+ constructor(private service: Master, private router: Router) { }
 
   loginobj: LoginModel = {
     username: '',

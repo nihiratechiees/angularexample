@@ -8,11 +8,20 @@
       "email": "test@in.com",
       "address": "new street\nKN Nager",
       "isagree": true
+    },
+    {
+      "id": "17d6",
+      "username": "ntuser",
+      "password": "testtest",
+      "fullname": "NT User",
+      "email": "nt@in.com",
+      "address": "new street",
+      "isagree": true
     }
   ],
   "companies": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Company A",
       "address": "123 Main St",
       "country": "USA",
@@ -20,7 +29,7 @@
       "isactive": true
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Company B",
       "address": "456 Elm St",
       "country": "UK",
@@ -28,7 +37,7 @@
       "isactive": false
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Company C",
       "address": "789 Oak St",
       "country": "Canada",
@@ -36,7 +45,7 @@
       "isactive": true
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Company D",
       "address": "321 Pine St",
       "country": "Australia",
@@ -44,7 +53,7 @@
       "isactive": false
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Company E",
       "address": "654 Cedar St",
       "country": "Germany",
@@ -52,7 +61,7 @@
       "isactive": true
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Company F",
       "address": "987 Birch St",
       "country": "France",
@@ -60,7 +69,7 @@
       "isactive": false
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Company G",
       "address": "246 Maple St",
       "country": "Japan",
@@ -68,7 +77,7 @@
       "isactive": true
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Company H",
       "address": "135 Spruce St",
       "country": "India",
@@ -76,7 +85,7 @@
       "isactive": false
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Company I",
       "address": "864 Willow St",
       "country": "Brazil",
@@ -84,7 +93,7 @@
       "isactive": true
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Company J",
       "address": "753 Aspen St",
       "country": "South Africa",

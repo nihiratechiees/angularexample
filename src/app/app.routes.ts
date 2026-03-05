@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { authGuard } from './Guard/auth-guard';
 import { Reactivex } from './reactivex/reactivex';
 import { Tablex } from './tablex/tablex';
+import { Employee } from './employee/employee';
 
 export const routes: Routes = [
 
@@ -26,6 +27,9 @@ export const routes: Routes = [
     },
     {
         path: 'table', component: Tablex
+    },
+    {
+        path:'employee',component:Employee
     },
     {
         path: '**', loadComponent: () => import('./home/home').then(m => m.Home)

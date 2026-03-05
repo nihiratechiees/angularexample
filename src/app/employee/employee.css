@@ -1,0 +1,42 @@
+.mat-mdc-card {
+      margin:2% 0 0 5%;
+    width: 90%;
+}
+
+.mat-mdc-form-field {
+    width: 98%;
+    margin: 1%;
+}
+.mat-card-90{
+    width: 96%;
+    margin: 2%;
+
+}
+.mat-50{
+    width: 48%;
+    margin: 1%;
+}
+.mat-25{
+    width: 23%;
+    margin: 1%;
+}
+.div-50{
+    width: 48%;
+    margin: 1%;
+    display: inline;
+}
+
+button{
+    margin: 2px;
+}
+.header {
+  display: flex;
+  align-items: center;       /* vertically center */
+  justify-content: space-between; /* optional: push to edges */
+  margin: 2%;
+  width: 96%;
+}
+.extradiv{
+    border: 2px solid #ccc;
+    margin: 2%;
+}

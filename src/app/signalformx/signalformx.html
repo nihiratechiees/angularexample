@@ -1,0 +1,55 @@
+<form (submit)="Save($event)">
+
+    <mat-card>
+        <mat-card-header>
+            <h1>Signal Forms</h1>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-form-field>
+                <mat-label>Code</mat-label>
+                <input matInput [formField]="_form.code">
+            </mat-form-field>
+            @if(_form.code().touched() && _form.code().invalid()){
+            @for(error of _form.code().errors();track error){
+            <mat-error>{{error.message}}</mat-error>
+            }
+            }
+
+            <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input matInput [formField]="_form.name">
+            </mat-form-field>
+            @if(_form.name().touched() && _form.name().invalid()){
+            @for(error of _form.name().errors();track error){
+            <mat-error>{{error.message}}</mat-error>
+            }
+            }
+
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput [formField]="_form.email">
+            </mat-form-field>
+            @if(_form.email().touched() && _form.email().invalid()){
+            @for(error of _form.email().errors();track error){
+            <mat-error>{{error.message}}</mat-error>
+            }
+            }
+
+            <mat-form-field>
+                <mat-label>Address</mat-label>
+                <input matInput [formField]="_form.address">
+            </mat-form-field>
+
+            <div>
+                <mat-checkbox [formField]="_form.isactive"></mat-checkbox>
+            </div>
+
+        </mat-card-content>
+        <mat-card-actions>
+            <button type="submit" [disabled]="_form().invalid()" matButton="filled">Save</button>
+        </mat-card-actions>
+    </mat-card>
+
+</form>
+<h2>{{_obj() | json}}</h2>
+ <button (click)="assign()">Assign</button>

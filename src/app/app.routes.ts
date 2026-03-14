@@ -3,6 +3,7 @@ import { authGuard } from './Guard/auth-guard';
 import { Reactivex } from './reactivex/reactivex';
 import { Tablex } from './tablex/tablex';
 import { Employee } from './employee/employee';
+import { Signalformx } from './signalformx/signalformx';
 
 export const routes: Routes = [
 
@@ -30,6 +31,9 @@ export const routes: Routes = [
     },
     {
         path:'employee',component:Employee
+    },
+    {
+        path:'signalform',component:Signalformx
     },
     {
         path: '**', loadComponent: () => import('./home/home').then(m => m.Home)

@@ -17,6 +17,15 @@
       "email": "nt@in.com",
       "address": "new street",
       "isagree": true
+    },
+    {
+      "id": "21da",
+      "username": "testuser",
+      "password": "testtest",
+      "fullname": "Test User",
+      "email": "test@gmail.com",
+      "address": "1st street",
+      "isagree": true
     }
   ],
   "companies": [

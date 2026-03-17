@@ -1,4 +1,4 @@
-<form [formGroup]="regiterform" (ngSubmit)="Proceedregister()">
+<form (submit)="Proceedregister($event)">
     <mat-card>
         <mat-card-header>
             <h1>User Registration Form</h1>
@@ -6,35 +6,58 @@
         <mat-card-content>
             <mat-form-field>
                 <mat-label>Username</mat-label>
-                <input matInput formControlName="username">
-                <mat-error>{{regiterform.get('username')?.getError('required') ? 'Username is required' : regiterform.get('username')?.getError('minlength') ? 'Username must be at least 5 characters long' : ''}}</mat-error>
+                <input matInput [formField]="regiterform.username">
+                <!-- <mat-error>{{regiterform.get('username')?.getError('required') ? 'Username is required' : regiterform.get('username')?.getError('minlength') ? 'Username must be at least 5 characters long' : ''}}</mat-error> -->
             </mat-form-field>
+            @if(regiterform.username().touched() && regiterform.username().invalid()){
+                @for(item of regiterform.username().errors();track item){
+                    <mat-error>{{item.message}}</mat-error>
+                }
+            }
             <mat-form-field>
                 <mat-label>Password</mat-label>
-                <input matInput type="password" formControlName="password">
-                <mat-error>{{regiterform.get('password')?.getError('required') ? 'Password is required' : regiterform.get('password')?.getError('minlength') ? 'Password must be at least 8 characters long' : ''}}</mat-error>
+                <input matInput type="password" [formField]="regiterform.password">
+                <!-- <mat-error>{{regiterform.get('password')?.getError('required') ? 'Password is required' : regiterform.get('password')?.getError('minlength') ? 'Password must be at least 8 characters long' : ''}}</mat-error> -->
             </mat-form-field>
+             @if(regiterform.password().touched() && regiterform.password().invalid()){
+                @for(item of regiterform.password().errors();track item){
+                    <mat-error>{{item.message}}</mat-error>
+                }
+            }
+
             <mat-form-field>
                 <mat-label>Full Name</mat-label>
-                <input matInput formControlName="fullname">
-                <mat-error>{{regiterform.get('fullname')?.getError('required') ? 'Full Name is required' : ''}}</mat-error>
+                <input matInput [formField]="regiterform.fullname">
+                <!-- <mat-error>{{regiterform.get('fullname')?.getError('required') ? 'Full Name is required' : ''}}</mat-error> -->
             </mat-form-field>
+             @if(regiterform.fullname().touched() && regiterform.fullname().invalid()){
+                @for(item of regiterform.fullname().errors();track item){
+                    <mat-error>{{item.message}}</mat-error>
+                }
+            }
+
             <mat-form-field>
                 <mat-label>Email</mat-label>
-                <input matInput formControlName="email">
-                <mat-error>{{regiterform.get('email')?.getError('required') ? 'Email is required' : regiterform.get('email')?.getError('email') ? 'Email must be a valid email address' : ''}}</mat-error>
+                <input matInput [formField]="regiterform.email">
+                <!-- <mat-error>{{regiterform.get('email')?.getError('required') ? 'Email is required' : regiterform.get('email')?.getError('email') ? 'Email must be a valid email address' : ''}}</mat-error> -->
             </mat-form-field>
+ @if(regiterform.email().touched() && regiterform.email().invalid()){
+                @for(item of regiterform.email().errors();track item){
+                    <mat-error>{{item.message}}</mat-error>
+                }
+            }
+
             <mat-form-field>
                 <mat-label>Address</mat-label>
-                <textarea matInput  formControlName="address"></textarea>
+                <textarea matInput  [formField]="regiterform.address"></textarea>
             </mat-form-field>
             <div>
-                <mat-checkbox formControlName="isagree">I agree to the terms and
+                <mat-checkbox [formField]="regiterform.isagree">I agree to the terms and
                     conditions</mat-checkbox>
             </div>
         </mat-card-content>
         <mat-card-actions>
-            <button type="submit" [disabled]="regiterform.invalid" matButton="filled">Register</button>
+            <button type="submit" [disabled]="regiterform().invalid()" matButton="filled">Register</button>
             <a type="button" (click)="redirectToLogin()" matButton>Already Registered?</a>
         </mat-card-actions>
     </mat-card>

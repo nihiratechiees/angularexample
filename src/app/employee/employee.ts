@@ -10,6 +10,7 @@ import { Master } from '../service/master';
 import { UserModel } from '../Model/Usermodel';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
+import { Associate } from '../Model/associate';
 
 @Component({
   selector: 'app-employee',
@@ -19,9 +20,12 @@ import { MatSelectModule } from '@angular/material/select';
   styleUrl: './employee.css',
 })
 export class Employee {
-  constructor(private service: Master, private router: Router) { }
+  constructor(private service: Master, private router: Router) {
+    this.Loadallassociate();
+   }
   builder = inject(FormBuilder);
   countries=['India','USA','England']
+  associatelist:Associate[]=[];
 
   employeeform = this.builder.group({
     firstname: new FormControl('', Validators.required),
@@ -60,6 +64,13 @@ export class Employee {
         zipcode: this.builder.control('', Validators.required)
       })
     )
+  }
+
+  Loadallassociate(){
+    this.service.GetAllAssociate().subscribe(data=>{
+     this.associatelist=data;
+     console.log(this.associatelist);
+    });
   }
 
 }

@@ -7,7 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { Master } from '../../service/master';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { LoginModel } from '../../Model/LoginModel';
+import { LoginModel, LoginResponse } from '../../Model/LoginModel';
 import { UserModel } from '../../Model/Usermodel';
 
 @Component({
@@ -37,13 +37,14 @@ export class Login {
   ProceedLogin() {
     if (this.loginform.valid) {
       this.loginobj = this.loginform.value as LoginModel;
-      this.service.Userlogin(this.loginobj).subscribe((res:UserModel[]) => {
-        if (res && res.length > 0) {
+      this.service.login(this.loginobj).subscribe((res:LoginResponse) => {
+        if (res !=null) {
          // localStorage.setItem('username', res[0].username);
           this.service._isloggedin.set(true);
-          this.service.loginuser.set(res[0].username);
+          this.service.loginuser.set(this.loginobj.username);
+          this.service.token.set(res.token);
           alert("Login Successful");
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/employee']);
         } else {
           alert("Invalid credentials");
         }

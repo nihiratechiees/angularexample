@@ -28,6 +28,16 @@
                 <mat-label>Remarks</mat-label>
                 <textarea matInput formControlName="remarks"></textarea>
             </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Associate</mat-label>
+                <mat-select>
+                    @for(item of associatelist;track item){
+                    <mat-option [value]="item.id">{{item.name}}</mat-option>
+                    }
+
+                </mat-select>
+            </mat-form-field>
             <div>
                 <mat-checkbox formControlName="isprime">Is Prime Customer</mat-checkbox>
             </div>

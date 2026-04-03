@@ -7,10 +7,10 @@ import { count } from 'console';
 export const errorInterceptor: HttpInterceptorFn = (req, next) => {
   const snackbar = inject(MatSnackBar);
   return next(req).pipe(
-    retry({
-      count: 3,
-      delay: 5000
-    }),
+    // retry({
+    //   count: 3,
+    //   delay: 5000
+    // }),
     tap({
       next: (event) => {
 
